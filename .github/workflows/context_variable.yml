@@ -1,0 +1,13 @@
+name: context variable
+
+on:
+  workflow_dispatch
+
+jobs:
+  context_variable_job:
+    runs-on: ubuntu-latest
+    steps:
+    - name: "Checking the context variable"
+      run: |
+        echo "Repo name" : ${{ github.repository }}"
+        echo "Workflow name" : ${{ github.workflow }}"
