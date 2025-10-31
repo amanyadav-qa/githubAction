@@ -1,0 +1,16 @@
+name: configuration repo level varibale
+
+on:
+  workflow_dispatch
+
+env:
+  company: Cometchat
+
+jobs:
+  job1:
+    runs-on: windows-latest
+    steps:
+    - name: "What is project id"
+      run: echo "$Cometchat $First_Line ${{ vars.project_id }}"
+      env:
+        First_Line: project id is 
