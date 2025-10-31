@@ -19,7 +19,7 @@ jobs:
   bye_job:
     runs-on: ubuntu-latest
     env: 
-      Bye: Bye Aman
+      Bye: Bye Aman, thanks for using 
     steps:
     - name: "Say, bye to Aman"
-      run: echo "$Bye"    
+      run: echo "$Bye $cloud"    
