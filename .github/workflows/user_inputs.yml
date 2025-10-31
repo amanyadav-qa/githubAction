@@ -1,26 +1,27 @@
 name: Adding two numbers
 
 on:
-  workflow_dispatch
-
+  workflow_dispatch:
     inputs:
       number1:
         description: 'First Number'
-        default: 0
+        default: '0'
         required: true
       number2:
-      description: 'Second Number'
-      default: 0
-      required: true
+        description: 'Second Number'
+        default: '0'
+        required: true
 
 jobs:
-  runs-on: ubuntu-latest
+  add:
+    runs-on: ubuntu-latest
     steps:
-      - name: "Adding two number"
+      - name: "Adding two numbers"
         id: sum
-        run: echo "::set-output name=sum::$((${{ inputs.number1 }} + ${{ inputs.number2 }}))"
+        shell: bash
+        run: |
+          sum=$(( ${{ inputs.number1 }} + ${{ inputs.number2 }} ))
+          echo "sum=$sum" >> "$GITHUB_OUTPUT"
 
       - name: Display sum
         run: echo "The addition of ${{ inputs.number1 }} and ${{ inputs.number2 }} is ${{ steps.sum.outputs.sum }}"
-      
-    
