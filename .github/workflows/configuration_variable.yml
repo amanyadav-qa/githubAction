@@ -8,9 +8,9 @@ env:
 
 jobs:
   job1:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
     - name: "What is project id"
-      run: echo "$Cometchat $First_Line ${{ vars.project_id }}"
+      run: echo "$company $First_Line ${{ vars.project_id }}"
       env:
         First_Line: project id is 
