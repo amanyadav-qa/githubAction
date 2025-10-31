@@ -16,6 +16,10 @@ jobs:
         run: echo "$Greeting $First_Name is using $cloud!"
         env:
           First_Name: Aman
-          
-    
-    
+  bye_job:
+    runs-on: ubuntu-latest
+    env: 
+      Bye: Bye Aman
+    steps:
+    - name: "Say, bye to Aman"
+      run: echo "$Bye"    
