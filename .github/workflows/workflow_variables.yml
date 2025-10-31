@@ -16,10 +16,21 @@ jobs:
         run: echo "$Greeting $First_Name is using $cloud!"
         env:
           First_Name: Aman
+          
   bye_job:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     env: 
       Bye: Bye Aman, thanks for using 
     steps:
     - name: "Say, bye to Aman"
-      run: echo "$Bye $cloud"    
+      run: echo "$Bye $cloud"
+      
+  callAgain_job:
+    runs-on: macos-latest
+    env: 
+      ComeAgain: Hi Aman, can you use 
+    steps:
+    - name: "Say, Hi Aman come again"
+      run: echo "$ComeAgain $cloud $again"
+      env:
+        again: again
